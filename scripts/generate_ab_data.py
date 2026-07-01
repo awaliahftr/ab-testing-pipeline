@@ -7,13 +7,12 @@ from datetime import datetime
 # ============================================
 # KONFIGURASI DATABASE
 # ============================================
+DB_HOST = "db.qnspkmnmxnajcywwiwgk.supabase.co"
 DB_USER = "postgres"
-DB_PASSWORD = "postgre"  
-DB_HOST = "localhost"
-DB_PORT = "5432"
-DB_NAME = "ab_testing"
+DB_PASSWORD = "AbTesting2024!"   # password Supabase
+DB_NAME = "postgres"
 
-DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:5432/{DB_NAME}"
 engine = create_engine(DATABASE_URL)
 
 # ============================================
