@@ -1,0 +1,832 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0603.1643                               -->
+<workbook original-version='18.1' source-build='2026.2.0 (20262.26.0603.1643)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='ab_testing' inline='true' name='federated.0asiegy0xe39rz1c1klot03sgpi7' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='postgres.1dmd0pe0dnkbff1fjz3zs0qjlugb'>
+            <connection authentication='username-password' class='postgres' dbname='ab_testing' one-time-sql='' port='5432' server='localhost' username='postgres' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='postgres.1dmd0pe0dnkbff1fjz3zs0qjlugb' name='ab_summary' table='[public].[ab_summary]' type='table' />
+          <relation connection='postgres.1dmd0pe0dnkbff1fjz3zs0qjlugb' name='ab_experiment' table='[public].[ab_experiment]' type='table' />
+        </relation>
+        <cols>
+          <map key='[conversion_rate]' value='[ab_summary].[conversion_rate]' />
+          <map key='[converted (ab_experiment)]' value='[ab_experiment].[converted]' />
+          <map key='[converted]' value='[ab_summary].[converted]' />
+          <map key='[group (ab_experiment)]' value='[ab_experiment].[group]' />
+          <map key='[group]' value='[ab_summary].[group]' />
+          <map key='[lift_pct]' value='[ab_summary].[lift_pct]' />
+          <map key='[p_value]' value='[ab_summary].[p_value]' />
+          <map key='[significant]' value='[ab_summary].[significant]' />
+          <map key='[timestamp]' value='[ab_experiment].[timestamp]' />
+          <map key='[total_users]' value='[ab_summary].[total_users]' />
+          <map key='[user_id]' value='[ab_experiment].[user_id]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[group]</local-name>
+            <parent-name>[ab_summary]</parent-name>
+            <remote-alias>group</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[ab_summary_19266BAFAB0F4D54989CB89665E8F08C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_users</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_users]</local-name>
+            <parent-name>[ab_summary]</parent-name>
+            <remote-alias>total_users</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[ab_summary_19266BAFAB0F4D54989CB89665E8F08C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>converted</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[converted]</local-name>
+            <parent-name>[ab_summary]</parent-name>
+            <remote-alias>converted</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[ab_summary_19266BAFAB0F4D54989CB89665E8F08C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>conversion_rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[conversion_rate]</local-name>
+            <parent-name>[ab_summary]</parent-name>
+            <remote-alias>conversion_rate</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[ab_summary_19266BAFAB0F4D54989CB89665E8F08C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>p_value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[p_value]</local-name>
+            <parent-name>[ab_summary]</parent-name>
+            <remote-alias>p_value</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[ab_summary_19266BAFAB0F4D54989CB89665E8F08C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>significant</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[significant]</local-name>
+            <parent-name>[ab_summary]</parent-name>
+            <remote-alias>significant</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ab_summary_19266BAFAB0F4D54989CB89665E8F08C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lift_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[lift_pct]</local-name>
+            <parent-name>[ab_summary]</parent-name>
+            <remote-alias>lift_pct</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[ab_summary_19266BAFAB0F4D54989CB89665E8F08C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_id]</local-name>
+            <parent-name>[ab_experiment]</parent-name>
+            <remote-alias>user_id</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[ab_experiment_525381A5E8EC40F89ACF6FBC21F00DA7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[group (ab_experiment)]</local-name>
+            <parent-name>[ab_experiment]</parent-name>
+            <remote-alias>group</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[ab_experiment_525381A5E8EC40F89ACF6FBC21F00DA7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>converted</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[converted (ab_experiment)]</local-name>
+            <parent-name>[ab_experiment]</parent-name>
+            <remote-alias>converted</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[ab_experiment_525381A5E8EC40F89ACF6FBC21F00DA7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>timestamp</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[timestamp]</local-name>
+            <parent-name>[ab_experiment]</parent-name>
+            <remote-alias>timestamp</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ab_experiment_525381A5E8EC40F89ACF6FBC21F00DA7]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Lift' datatype='real' name='[Calculation_2350774328410115]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(SUM(IF [group] = &apos;B&apos; THEN [conversion_rate] END) - SUM(IF [group] = &apos;A&apos; THEN [conversion_rate] END)) / SUM(IF [group] = &apos;A&apos; THEN [conversion_rate] END) * 100' />
+      </column>
+      <column caption='Conv Rate A' datatype='real' name='[Calculation_2350774330482694]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [group] = &apos;A&apos; THEN [conversion_rate] END)' />
+      </column>
+      <column caption='Conv Rate B' datatype='real' name='[Calculation_2350774330564615]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [group] = &apos;B&apos; THEN [conversion_rate] END)' />
+      </column>
+      <column caption='ab_experiment' datatype='table' name='[__tableau_internal_object_id__].[ab_experiment_525381A5E8EC40F89ACF6FBC21F00DA7]' role='measure' type='quantitative' />
+      <column caption='ab_summary' datatype='table' name='[__tableau_internal_object_id__].[ab_summary_19266BAFAB0F4D54989CB89665E8F08C]' role='measure' type='quantitative' />
+      <column caption='Conversion Rate' datatype='real' name='[conversion_rate]' role='measure' type='quantitative' />
+      <column caption='Converted (Ab Experiment)' datatype='integer' name='[converted (ab_experiment)]' role='measure' type='quantitative' />
+      <column caption='Converted' datatype='integer' name='[converted]' role='measure' type='quantitative' />
+      <column caption='Group (Ab Experiment)' datatype='string' name='[group (ab_experiment)]' role='dimension' type='nominal' />
+      <column caption='Group' datatype='string' name='[group]' role='dimension' type='nominal' />
+      <column caption='Lift Pct' datatype='real' name='[lift_pct]' role='measure' type='quantitative' />
+      <column caption='P Value' datatype='real' name='[p_value]' role='measure' type='quantitative' />
+      <column caption='Significant' datatype='boolean' name='[significant]' role='dimension' type='nominal' />
+      <column caption='Timestamp' datatype='datetime' name='[timestamp]' role='dimension' type='ordinal' />
+      <column caption='Total Users' datatype='integer' name='[total_users]' role='measure' type='quantitative' />
+      <column caption='User Id' datatype='integer' name='[user_id]' role='dimension' type='ordinal' />
+      <column-instance column='[group]' derivation='None' name='[none:group:nk]' pivot='key' type='nominal' />
+      <column-instance column='[significant]' derivation='None' name='[none:significant:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Group)' hidden='true' name='[Action (Group)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[group]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:significant:nk]' palette='tableau10_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>true</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:group:nk]' type='palette'>
+            <map to='#2ecc71'>
+              <bucket>&quot;B&quot;</bucket>
+            </map>
+            <map to='#3498db'>
+              <bucket>&quot;A&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Indonesia&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='group' />
+        <field-sort-custom-order field='Calculation_2350774329831428' />
+        <field-sort-custom-order field='total_users' />
+        <field-sort-custom-order field='converted' />
+        <field-sort-custom-order field='conversion_rate' />
+        <field-sort-custom-order field='Calculation_2350774324776961' />
+        <field-sort-custom-order field='Calculation_2350774324654080' />
+        <field-sort-custom-order field='p_value' />
+        <field-sort-custom-order field='significant' />
+        <field-sort-custom-order field='lift_pct' />
+        <field-sort-custom-order field='Calculation_2350774328410115' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='ab_experiment' id='ab_experiment_525381A5E8EC40F89ACF6FBC21F00DA7'>
+            <properties context=''>
+              <relation connection='postgres.1dmd0pe0dnkbff1fjz3zs0qjlugb' name='ab_experiment' table='[public].[ab_experiment]' type='table' />
+            </properties>
+          </object>
+          <object caption='ab_summary' id='ab_summary_19266BAFAB0F4D54989CB89665E8F08C'>
+            <properties context=''>
+              <relation connection='postgres.1dmd0pe0dnkbff1fjz3zs0qjlugb' name='ab_summary' table='[public].[ab_summary]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[group]' />
+              <expression op='[group (ab_experiment)]' />
+            </expression>
+            <first-end-point object-id='ab_summary_19266BAFAB0F4D54989CB89665E8F08C' />
+            <second-end-point object-id='ab_experiment_525381A5E8EC40F89ACF6FBC21F00DA7' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_BF1DD3E72BE4484ABF263D168F3085FB]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Conversion Rate per Group' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action2_6AEDE79DF3E64D1EAE0945B69829B675]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='KPI Cards' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Conversion Rate per Group'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Trebuchet MS'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ab_testing' name='federated.0asiegy0xe39rz1c1klot03sgpi7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0asiegy0xe39rz1c1klot03sgpi7'>
+            <column-instance column='[significant]' derivation='Count' name='[cnt:significant:qk]' pivot='key' type='quantitative' />
+            <column caption='Conversion Rate' datatype='real' name='[conversion_rate]' role='measure' type='quantitative' />
+            <column caption='Group' datatype='string' name='[group]' role='dimension' type='nominal' />
+            <column-instance column='[group]' derivation='None' name='[none:group:nk]' pivot='key' type='nominal' />
+            <column caption='Significant' datatype='boolean' name='[significant]' role='dimension' type='nominal' />
+            <column-instance column='[conversion_rate]' derivation='Sum' name='[sum:conversion_rate:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[cnt:significant:qk]' included-values='in-range' />
+          <slices>
+            <column>[federated.0asiegy0xe39rz1c1klot03sgpi7].[cnt:significant:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0asiegy0xe39rz1c1klot03sgpi7].[sum:conversion_rate:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' field='[federated.0asiegy0xe39rz1c1klot03sgpi7].[sum:conversion_rate:qk]' value='Trebuchet MS' />
+            <format attr='font-family' field='[federated.0asiegy0xe39rz1c1klot03sgpi7].[none:group:nk]' value='Trebuchet MS' />
+            <format attr='text-format' field='[federated.0asiegy0xe39rz1c1klot03sgpi7].[sum:conversion_rate:qk]' value='p0%' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0asiegy0xe39rz1c1klot03sgpi7].[cnt:significant:qk]' palette='green_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='band-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='cols' value='1' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[none:group:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-color' value='#00007f' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0asiegy0xe39rz1c1klot03sgpi7].[none:group:nk]</rows>
+        <cols>[federated.0asiegy0xe39rz1c1klot03sgpi7].[sum:conversion_rate:qk]</cols>
+      </table>
+      <simple-id uuid='{51376731-6AAB-4220-91F9-966313EE2D31}' />
+    </worksheet>
+    <worksheet name='KPI Cards'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Trebuchet MS'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ab_testing' name='federated.0asiegy0xe39rz1c1klot03sgpi7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0asiegy0xe39rz1c1klot03sgpi7'>
+            <column caption='Lift' datatype='real' name='[Calculation_2350774328410115]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='(SUM(IF [group] = &apos;B&apos; THEN [conversion_rate] END) - SUM(IF [group] = &apos;A&apos; THEN [conversion_rate] END)) / SUM(IF [group] = &apos;A&apos; THEN [conversion_rate] END) * 100' />
+            </column>
+            <column caption='Conv Rate A' datatype='real' name='[Calculation_2350774330482694]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [group] = &apos;A&apos; THEN [conversion_rate] END)' />
+            </column>
+            <column caption='Conv Rate B' datatype='real' name='[Calculation_2350774330564615]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [group] = &apos;B&apos; THEN [conversion_rate] END)' />
+            </column>
+            <column caption='Conversion Rate' datatype='real' name='[conversion_rate]' role='measure' type='quantitative' />
+            <column caption='Group' datatype='string' name='[group]' role='dimension' type='nominal' />
+            <column-instance column='[total_users]' derivation='Sum' name='[sum:total_users:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Users' datatype='integer' name='[total_users]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_2350774328410115]' derivation='User' name='[usr:Calculation_2350774328410115:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2350774330482694]' derivation='User' name='[usr:Calculation_2350774330482694:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2350774330564615]' derivation='User' name='[usr:Calculation_2350774330564615:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0asiegy0xe39rz1c1klot03sgpi7].[sum:total_users:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774328410115:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774330482694:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774330564615:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0asiegy0xe39rz1c1klot03sgpi7].[sum:total_users:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774330482694:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774330564615:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774328410115:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[Action (Group)]'>
+            <groupfilter function='level-members' level='[group]' user:ui-action-filter='[Action1_BF1DD3E72BE4484ABF263D168F3085FB]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0asiegy0xe39rz1c1klot03sgpi7].[:Measure Names]</column>
+            <column>[federated.0asiegy0xe39rz1c1klot03sgpi7].[Action (Group)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0asiegy0xe39rz1c1klot03sgpi7].[:Measure Names]' value='242' />
+            <format attr='text-format' field='[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774328410115:qk]' value='n#,##0.00&quot;%&quot;;-#,##0.00&quot;%&quot;' />
+            <format attr='text-format' field='[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774330482694:qk]' value='p0.00%' />
+            <format attr='text-format' field='[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774330564615:qk]' value='p0.00%' />
+            <format attr='height' value='42' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[sum:total_users:qk]' />
+              <text column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[Multiple Values]' />
+              <text column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774328410115:qk]' />
+              <text column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774330482694:qk]' />
+              <text column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[usr:Calculation_2350774330564615:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Trebuchet MS' fontsize='15'>&lt;</run>
+                <run fontname='Trebuchet MS' fontsize='15'>[federated.0asiegy0xe39rz1c1klot03sgpi7].[Multiple Values]</run>
+                <run fontname='Trebuchet MS' fontsize='15'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0asiegy0xe39rz1c1klot03sgpi7].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{4DFA4B9B-5AF6-48CE-B97E-BF185E685AD9}' />
+    </worksheet>
+    <worksheet name='Significance &amp; Lift'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='17'>📊 Significance</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ab_testing' name='federated.0asiegy0xe39rz1c1klot03sgpi7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0asiegy0xe39rz1c1klot03sgpi7'>
+            <column caption='Group' datatype='string' name='[group]' role='dimension' type='nominal' />
+            <column-instance column='[significant]' derivation='None' name='[none:significant:nk]' pivot='key' type='nominal' />
+            <column caption='P Value' datatype='real' name='[p_value]' role='measure' type='quantitative' />
+            <column caption='Significant' datatype='boolean' name='[significant]' role='dimension' type='nominal' />
+            <column-instance column='[p_value]' derivation='Sum' name='[sum:p_value:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[Action (Group)]'>
+            <groupfilter function='level-members' level='[group]' user:ui-action-filter='[Action1_BF1DD3E72BE4484ABF263D168F3085FB]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0asiegy0xe39rz1c1klot03sgpi7].[Action (Group)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='393' />
+            <format attr='height' value='202' />
+            <format attr='text-format' field='[federated.0asiegy0xe39rz1c1klot03sgpi7].[sum:p_value:qk]' value='n#,##0.0000;-#,##0.0000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[sum:p_value:qk]' />
+              <text column='[federated.0asiegy0xe39rz1c1klot03sgpi7].[none:significant:nk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontalignment='0' fontname='Trebuchet MS' fontsize='10'><![CDATA[P Value : <[federated.0asiegy0xe39rz1c1klot03sgpi7].[sum:p_value:qk]> ✅]]></run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run fontalignment='0' fontname='Trebuchet MS' fontsize='10'><![CDATA[Signifikan : (<[federated.0asiegy0xe39rz1c1klot03sgpi7].[none:significant:nk]>) ]]></run>
+                <run fontalignment='0'>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C1D0805C-8AF7-4C12-86F1-60C04A18C9EE}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='20'>🔬 A/B Testing Dashboard - awaliahftr                    </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='68750' id='15' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='7750' id='16' type-v2='title' w='98400' x='800' y='1000'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='61000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='8750'>
+              <zone h='61000' id='3' param='vert' type-v2='layout-flow' w='98400' x='800' y='8750'>
+                <zone fixed-size='134' h='17750' id='5' is-fixed='true' name='KPI Cards' w='98400' x='800' y='8750'>
+                  <layout-cache fixed-size-w='970' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='43249' id='9' param='horz' type-v2='layout-flow' w='98400' x='800' y='26500'>
+                  <zone h='43249' id='10' name='Conversion Rate per Group' w='52000' x='800' y='26500'>
+                    <layout-cache minwidth='180' type-h='cell' type-w='scalable' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='456' h='43249' id='13' is-fixed='true' name='Significance &amp; Lift' w='46400' x='52800' y='26500'>
+                    <layout-cache type-h='fixed' type-w='fixed' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone forceUpdate='true' h='29250' id='17' type-v2='text' w='98400' x='800' y='69750'>
+            <formatted-text>
+              <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>📌 </run>
+              <run bold='true' fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>Insight &amp; Rekomendasi</run>
+              <run>Æ&#10;&#10;</run>
+              <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>✅ </run>
+              <run bold='true' fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>Group B</run>
+              <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'> (🟩) meningkatkan konversi sebesar </run>
+              <run bold='true' fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>51.55%</run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>✅</run>
+              <run bold='true' fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'> P-Value &lt; 0.05</run>
+              <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'> → hasil sangat signifikan secara statistik</run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>✅ </run>
+              <run bold='true' fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>Kesimpulan:</run>
+              <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'> DEPLOY perubahan ke seluruh user! 🚀</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='20'>🔬 A/B Testing Dashboard - awaliahftr                    </run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='900' minheight='900' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='21' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='20' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone h='7750' id='16' type-v2='title' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='134' h='17750' id='5' is-fixed='true' name='KPI Cards' w='98400' x='800' y='8750'>
+                  <layout-cache fixed-size-w='970' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='43249' id='10' is-fixed='true' name='Conversion Rate per Group' w='52000' x='800' y='26500'>
+                  <layout-cache minwidth='180' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='43249' id='13' is-fixed='true' name='Significance &amp; Lift' w='46400' x='52800' y='26500'>
+                  <layout-cache type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='29250' id='17' type-v2='text' w='98400' x='800' y='69750'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>📌 </run>
+                    <run bold='true' fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>Insight &amp; Rekomendasi</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>✅ </run>
+                    <run bold='true' fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>Group B</run>
+                    <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'> (🟩) meningkatkan konversi sebesar </run>
+                    <run bold='true' fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>51.55%</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>✅</run>
+                    <run bold='true' fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'> P-Value &lt; 0.05</run>
+                    <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'> → hasil sangat signifikan secara statistik</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>✅ </run>
+                    <run bold='true' fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'>Kesimpulan:</run>
+                    <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='15'> DEPLOY perubahan ke seluruh user! 🚀</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{AE8BA8A8-8CE4-4047-A763-9DAE333EF655}' />
+    </dashboard>
+  </dashboards>
+  <windows pres-mode='true' source-height='44'>
+    <window class='worksheet' name='Conversion Rate per Group'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0asiegy0xe39rz1c1klot03sgpi7].[cnt:significant:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.0asiegy0xe39rz1c1klot03sgpi7].[none:group:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4EBD11E3-F4B5-49C1-AE8D-D6DF76E2685B}' />
+    </window>
+    <window class='worksheet' name='KPI Cards'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0asiegy0xe39rz1c1klot03sgpi7].[:Measure Names]' show-morefewerbutton='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C990E49E-57C8-45EE-88A5-418BA30FE616}' />
+    </window>
+    <window class='worksheet' name='Significance &amp; Lift'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9B1AFF1E-E428-45AE-8A22-6BF76781B76C}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Conversion Rate per Group'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI Cards' />
+        <viewpoint name='Significance &amp; Lift' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{E3E53F52-6CD8-45EB-BA5C-43F1714DC692}' />
+    </window>
+  </windows>
+</workbook>
