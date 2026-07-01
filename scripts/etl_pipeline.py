@@ -6,12 +6,7 @@ from scipy.stats import chi2_contingency
 # ============================================
 # KONFIGURASI DATABASE
 # ============================================
-DB_HOST = "db.qnspkmnmxnajcywwiwgk.supabase.co"
-DB_USER = "postgres"
-DB_PASSWORD = "AbTesting2024!"   # password Supabase
-DB_NAME = "postgres"
-
-DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:5432/{DB_NAME}"
+DATABASE_URL = "postgresql://postgres.qnspkmnmxajcywwiwgk:AbTesting2024!@aws-1-ap-northeast-1.pooler.supabase.com:5432/postgres"
 engine = create_engine(DATABASE_URL)
 
 # ============================================
