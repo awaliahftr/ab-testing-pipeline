@@ -7,7 +7,8 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 **End-to-End Data Analytics Project | Python • PostgreSQL • Tableau • GitHub Actions**
-![Dashboard Preview]([docs/dashboard_screenshot.png](https://github.com/awaliahftr/ab-testing-pipeline/blob/6e858dff94c91f7c42c53a768842aedf81c9dee0/docs/dashboard.png))
+
+![Dashboard Preview](https://github.com/awaliahftr/ab-testing-pipeline/blob/8b66530ba55bf55b648d22affc42ae3a605dac6f/docs/dashboard.png)
 
 ---
 
