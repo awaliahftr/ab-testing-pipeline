@@ -10,25 +10,6 @@
 
 ---
 
-## 📌 Table of Contents
-
-- [Project Overview](#-project-overview)
-- [Architecture & Data Flow](#-architecture--data-flow)
-- [Tech Stack](#-tech-stack)
-- [Key Features](#-key-features)
-- [A/B Test Results](#-ab-test-results)
-- [Project Structure](#-project-structure)
-- [How to Run](#-how-to-run)
-- [CI/CD Automation](#-cicd-automation)
-- [Email Notification](#-email-notification)
-- [Live Dashboard](#-live-dashboard)
-- [Business Insights](#-business-insights)
-- [Key Learnings](#-key-learnings)
-- [Author](#-author)
-- [License](#-license)
-
----
-
 ## 🎯 Project Overview
 
 This project demonstrates an **end-to-end A/B testing pipeline** with automated ETL (Extract, Transform, Load) and real-time dashboard monitoring.
@@ -177,4 +158,6 @@ pip install -r requirements.txt
 
 ## 👤 Author
 Awaliah Fitri Nur Ananda
+- 🔗 LinkedIn: https://www.linkedin.com/in/awaliahftrr 
+- 📧 Email: awaliahftrr@gmail.com
 
