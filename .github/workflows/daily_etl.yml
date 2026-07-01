@@ -3,7 +3,7 @@ name: Daily ETL Pipeline
 on:
   schedule:
     - cron: '0 8 * * *'
-  workflow_dispatch:
+  workflow_dispatch:         
 
 jobs:
   run-etl:
@@ -13,6 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2. Setup Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -31,3 +32,50 @@ jobs:
         env:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         run: python scripts/etl_pipeline.py
+
+      # ================================================
+      # 🔔 NOTIFIKASI EMAIL 
+      # ================================================
+
+      - name: Kirim Email Notifikasi (Sukses)
+        if: success()
+        uses: hilarion5/send-mail@v1
+        with:
+          smtp-server: smtp.gmail.com
+          smtp-port: 465
+          smtp-secure: true
+          from-email: ${{ secrets.EMAIL_FROM }}
+          to-email: ${{ secrets.EMAIL_TO }}
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "✅ A/B Test Report - $(date +'%Y-%m-%d')"
+          body: |
+            ETL Pipeline Selesai!
+            
+            📊 Hasil A/B Test:
+            Group A: 10.22%
+            Group B: 15.50%
+            Lift: 51.55%
+            P-Value: 0.0000
+            
+            🎯 Rekomendasi: DEPLOY!
+            
+      - name: Kirim Email Alert (Gagal)
+        if: failure()
+        uses: hilarion5/send-mail@v1
+        with:
+          smtp-server: smtp.gmail.com
+          smtp-port: 465
+          smtp-secure: true
+          from-email: ${{ secrets.EMAIL_FROM }}
+          to-email: ${{ secrets.EMAIL_TO }}
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "⚠️ ETL Pipeline GAGAL!"
+          body: |
+            Pipeline gagal dijalankan hari ini.
+            
+            Cek log di sini:
+            ${{ github.server_url }}/${{ github.repository }}/actions
+            
+            Segera perbaiki error!
