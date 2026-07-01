@@ -23,6 +23,9 @@ jobs:
             python -m pip install --upgrade pip
             pip install -r requirements.txt
 
+      - name: Set date variable
+        run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
       - name: Generate Data
         env:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
@@ -48,7 +51,7 @@ jobs:
           to-email: ${{ secrets.EMAIL_TO }}
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "✅ A/B Test Report - $(date +'%Y-%m-%d')"
+          subject: "✅ A/B Test Report - ${{ env.TODAY }}"
           body: |
             ETL Pipeline Selesai!
             
@@ -71,7 +74,7 @@ jobs:
           to-email: ${{ secrets.EMAIL_TO }}
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "⚠️ ETL Pipeline GAGAL!"
+          subject: "⚠️ ETL Pipeline GAGAL - ${{ env.TODAY }}"
           body: |
             Pipeline gagal dijalankan hari ini.
             
